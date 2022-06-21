@@ -9,6 +9,10 @@ export default function TextForm(props) {
     let newText2 = text.toLowerCase();
     setText(newText2);
   };
+  const Onclick3 = () => {
+    let newText3 = "";
+    setText(newText3);
+  };
   const handleOneChange = (event) => {
     setText(event.target.value);
   };
@@ -33,10 +37,17 @@ export default function TextForm(props) {
       <button className="btn btn-secondary mx-3" onClick={Onclick2}>
         Convert to Lowercase
       </button>
+      <button className="btn btn-secondary" onClick={Onclick3}>
+       Clear Text
+      </button>
     </div>
     <div className="container">
     <h1>YOUR TEXT SUMMARY</h1>
     <p> Total words={text?text.split(' ').length:0} AND TOTAL CHARACTERS ={text.length}</p>
+    <p> AND TOTAL CHARACTERS ={text.length}</p>
+    <p>MINUTES TO READ={text?0.008 *text.split(' ').length:0} </p>
+    <h2>Preview</h2>
+    <p>{text}</p>
     </div>
 </>
 
